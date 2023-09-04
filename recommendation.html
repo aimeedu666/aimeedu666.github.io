@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Recommendation</title>
+      <meta name="keywords" content="food">
+      <meta name="description" content="This page will be updated in real time with the top 6 selling foods in the United States today.">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <!-- shared.css -->
+      <link rel="stylesheet" href="css/shared.css">
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- plugin -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+      <script src="http://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
+      <script src="js/jquery.shCircleLoader.js" type="text/javascript"></script>
+      <style>
+         .nav-link:hover {
+             color: #8a817c!important;
+             text-decoration: underline!important;
+         }
+         .nav-link {
+            color: #463F3A!important;
+         }
+         .active{
+             color: #8a817c!important;
+         }
+         body {
+            background-color: #F5EBE0;
+            font-family: Verdana, Arial, sans-serif;
+         }
+         h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #463F3A;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-family: Verdana, Arial, sans-serif;
+            background-color: #E3D5CA;
+            border-top: 4px solid #463F3A;
+            margin-bottom: 0px;
+         }
+         h5 {
+            font-weight: bold;
+            font-size: 1.2em;
+         }
+         .card-text {
+            background-color: #E3D5CA;
+            line-height: 1.3;
+            font-size: 0.75em;
+            margin-bottom: 0px;
+         }
+         .card-img-top {
+            width: 50%;
+            height: auto;
+            border: 4px solid #463F3A;
+         }
+         .card {
+            width: 200px;
+            background-color: #F5EBE0;
+            border: 4px solid #463F3A;
+            width: 100%;
+            height: 100%;
+            margin-right: 0px!important;
+            margin-left: 0px!important;
+            padding-left: 0px!important;
+            padding-right: 0px!important;
+         }
+         .card:hover {
+            background-color: #E3D5CA;
+         }
+         .btn:hover {
+            background-color: #463F3A;
+            border: 4px solid #463F3A;
+            color: white;
+         }
+         .btn {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #463F3A;
+            font-weight: bold;
+            border: 4px solid #463F3A;
+            font-size: 0.9em;
+         }
+         .card-body {
+            padding-top: 0px;
+         }
+         #footer {
+            color: #F5EBE0;
+         }
+         .card-deck .card {
+            flex: none;
+         }
+         #container {
+            width: 100%;
+            margin-right: 0px!important;
+            margin-left: 0px!important;
+         }
+         .col-sm-6 {
+            margin-left: 0px;
+            margin-right: 0px;
+         }
+         #loader-container {
+            margin-right: auto;
+            margin-left: auto;
+            width: 200px;
+            height: 200px;
+         }
+         .container-fluid {
+            height: 100vh;
+         }
+
+
+
+      </style>
+   </head>
+   <body>
+      <!-- navbar starts -->
+      <nav class="navbar navbar-expand-md navbar-light" id="navbar_container">
+         <span id="transparent"></span>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="project.html">Project Summery</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="search.html">Search</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" href="recommendation.html">Recommendation</a>
+               </li>
+               <li class="nav-item right">
+                  <a class="nav-link" href="favorite.php" id="fav">&hearts; Favorate List</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- navbar ends -->
+
+      <!-- search section starts -->
+      <h1>TOP6 BEST SELLERS IN U.S.</h1>
+      <div class="container mb-4">
+         <div class="container-fluid"><div class="pt-5" id="loader-container"></div></div>
+         <div class="row mt-2 card-deck mb-4 px-0" id="container">
+            <!-- <div class="col-sm-6 col-md-4 col-xl-2 text-center mx-0 pt-3">
+               <div class="card">
+                  <div class="img_container">
+                     <img class="card-img-top my-3 rounded" src="https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.502.400.jpg" alt="Nutella">
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Nutella</h5>
+                     <p class="card-text">Category: Petit-déjeuners</p>
+                     <a href="detail.html" class="btn px-2 mt-3">Details</a>
+                     <a href="#" class="btn mt-3 like">&hearts;</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
+      <!-- search section ends -->
+      <div id="footer">
+         Contact: aimeedu@usc.edu. All Rights Reserved. Design by Aimee Du&copy;
+      </div>
+      <script>
+         window.onload = function() {
+            $('#loader-container').shCircleLoader({
+                dots: 15,
+                dotsRadius: 15,
+                color: '#463F3A'
+            });
+            var i = 0;
+            setInterval(function() {
+               $('#loader-container').shCircleLoader('progress', i + '%');
+               if (i < 100) i+=4;
+            }, 30);
+         }
+
+         function createRow(item,index){
+            var biggest = document.createElement("div")
+            var card = document.createElement("div")
+            var img_container = document.createElement("div")
+            var card_body = document.createElement("div")
+            var image = document.createElement("img")
+            var title = document.createElement("h5")
+            var paragraph = document.createElement("p")
+            var detail = document.createElement("a")
+            var heart = document.createElement("a")
+
+            image.src = item.image_url
+            image.alt = item.product_name
+            title.innerHTML = item.product_name
+            paragraph.innerHTML = "Category: " + item.categories_tags[0].replace(/^en:/, '')
+            detail.href = "detail_recommendation.php?id=" + index
+            detail.innerHTML = "Details"
+            heart.innerHTML = "&hearts;"
+            heart.href = "fav_recommendation.php?id=" + index
+
+
+            biggest.appendChild(card)
+            card.appendChild(img_container)
+            card.appendChild(card_body)
+            img_container.appendChild(image)
+            card_body.appendChild(title)
+            card_body.appendChild(paragraph)
+            card_body.appendChild(detail)
+            card_body.appendChild(heart)
+
+            biggest.classList.add('col-sm-6','col-md-4','col-xl-2','text-center','pt-3')
+            card.classList.add('card')
+            img_container.classList.add('img_container')
+            image.classList.add('card-img-top','my-3','rounded')
+            card_body.classList.add('card-body')
+            title.classList.add('card-title')
+            paragraph.classList.add('card-text')
+            detail.classList.add('btn','px-2','mt-3')
+            heart.classList.add('btn','like','mt-3')
+
+            document.querySelector('#container').appendChild(biggest);
+
+            // sound effect starts
+            var audio = new Audio('sound/sparkling.m4a');
+            heart.onclick = function() {
+               console.log("click")
+               audio.play();
+               return confirm('Are you sure you want to add to favrite list?');
+            }
+            // sound effect ends
+         }
+
+         $.ajax({
+            url: "https://us.openfoodfacts.org/cgi/search.pl?action=process&sort_by=unique_scans_n&json=true&fields=product_name,categories_tags,image_url&page_size=30",
+            dataType: "json",
+            success: function(result) {
+               console.log(result);
+               $('#loader-container').hide();
+               document.querySelector('.container-fluid').style.display = "none";
+               let count = 0
+               let index = 0
+               let add = true
+               while (count < 6){
+                  for (let i=0;i<index;i++){
+                     if (typeof result.products[i].product_name === 'undefined' || result.products[index].product_name==result.products[i].product_name){
+                        add=false
+                     }
+                  }
+                  if (add==true){
+                     createRow(result.products[index],index)
+                     count++
+                  }
+                  add = true
+                  index++
+               }
+            },
+            error: function(error) {
+               alert("AJAX error")
+               console.log(error)
+            }
+         });
+      </script>
+      <!-- bootstrap script -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+   </body>
+</html>
