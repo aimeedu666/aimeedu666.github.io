@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <style type="text/css">
-    #food_search {
-      position: relative;
-      background-image: url("image/food_search.png");
-      background-size: 100% auto; 
-      background-position: center center;
-      background-repeat: no-repeat;
-      opacity: 0.1;
-      justify-content: center;
-      align-items: center;
+    /*  font  */
+    @font-face {
+       font-family: "WriterQuattroSRegular";
+       src: url("font/WriterQuattroSRegular.ttf");
     }
-    #homepage {
-      background-image: url("image/homepage.jpeg");
-      background-size: 100% auto; 
-      background-position: center center;
-      background-repeat: no-repeat;
-      height: 100vh;
+    h1 {
+      font-family: WriterQuattroSRegular, Arial, sans-serif !important;
     }
+
+    /*  wrapper  */
     .wrapper {
       position: relative;
       margin: 0; 
       padding: 0; 
     }
+
+    /*  bottom div  */
+    .bottom-div {
+      background-size: 100% auto; 
+      background-position: center center;
+      background-repeat: no-repeat;
+      justify-content: center;
+      align-items: center;
+    }
+    #homepage {
+      background-image: url("image/homepage.jpeg");
+      height: 100vh;
+    }
+    #food_search {
+      background-image: url("image/food_search.png");
+      opacity: 0.1;
+    }
+    #traffic {
+      background-image: url("image/traffic.png");
+      opacity: 0.1;
+    }
+    #CTB {
+      background-image: url("image/CTB.png");
+      opacity: 0.1;
+    }
+
+    /*  top div  */
     .container {
       height: 90vh;
       margin-top: 5vh;
@@ -40,13 +60,16 @@
       color: black;
       text-decoration: none;
     }
-    a:hover ~ #food_search{
-      opacity: 1;
+
+    /*  hover  */
+    a:hover ~ div{
+      opacity: 1 !important;
       transition: opacity 0.3s ease-in-out;
     }
     a:hover .top-div h1{
       visibility: hidden;
     }
+
   </style>
   <head>
     <title>Aimee's Portfolio</title>
@@ -65,16 +88,37 @@
           <h1 style="white-space: nowrap;"><strong>Yuxuan Du's<br>Portfolio</strong><br>web design<br>&<br>photography</h1>
           <p></p>
       </div>
-      <div id="homepage"></div>
+      <div id="homepage" class="bottom-div"></div>
     </div>
-      <div class="wrapper">
-        <a href="https://aimeedu-itp303.000webhostapp.com/">
-          <div class="top-div container">
-              <h1 style="white-space: nowrap;"><strong>Food Search<br>Web App</strong><br>full-stack<br>web development</h1>
-              <p></p>
-          </div>
-        </a>
-        <div id="food_search" class="container"></div>
-      </div>
+
+    <div class="wrapper">
+      <a href="https://aimeedu-itp303.000webhostapp.com">
+        <div class="top-div container">
+            <h1 style="white-space: nowrap;"><strong>Food Search<br>Web App</strong><br>full-stack<br>web development</h1>
+            <p></p>
+        </div>
+      </a>
+      <div id="food_search" class="container bottom-div"></div>
+    </div>
+
+    <div class="wrapper">
+      <a href="https://adrockisland.wixsite.com/jped3">
+        <div class="top-div container">
+            <h1 style="white-space: nowrap;"><strong>Traffic Theme<br>Web Design</strong><br>front-end</h1>
+            <p></p>
+        </div>
+      </a>
+      <div id="traffic" class="container bottom-div"></div>
+    </div>
+
+    <div class="wrapper">
+      <a href="https://duyuxuan5.wixsite.com/evelinsworld">
+        <div class="top-div container">
+            <h1 style="white-space: nowrap;"><strong>Gender Equality Project<br>Web Design</strong><br>front-end</h1>
+            <p></p>
+        </div>
+      </a>
+      <div id="CTB" class="container bottom-div"></div>
+    </div>
   </body>
 </html>
